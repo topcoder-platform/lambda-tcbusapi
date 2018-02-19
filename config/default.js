@@ -1,6 +1,15 @@
 /**
  * The default configuration.
  */
+
+ console.log("KAFKA_URL :",process.env.KAFKA_URL);
+ console.log("KAFKA_CLIENT_CERT :",process.env.KAFKA_CLIENT_CERT);
+ console.log("KAFKA_CLIENT_CERT_KEY :",process.env.KAFKA_CLIENT_CERT_KEY);
+ console.log("ALLOWED_SERVICES :",process.env.ALLOWED_SERVICES);
+ console.log("CONTEXT_PATH :",process.env.CONTEXT_PATH);
+ console.log("KAFKA_TOPIC_PREFIX :",process.env.KAFKA_TOPIC_PREFIX);
+
+
 module.exports = {
     KAFKA_CLIENT_CERT: process.env.KAFKA_CLIENT_CERT ? process.env.KAFKA_CLIENT_CERT.replace('\\n', '\n') : null,
   KAFKA_CLIENT_CERT_KEY: process.env.KAFKA_CLIENT_CERT_KEY ? process.env.KAFKA_CLIENT_CERT_KEY.replace('\\n', '\n') : null,
