@@ -11,8 +11,8 @@ const cors = require('cors')
 const config = require('config')
 const morgan = require('morgan')
 const _ = require('lodash')
-
-
+const util = require("util");
+console.log('event:', util.inspect(event, { showHidden: false, depth: null }));
 // Server
 // Start
 

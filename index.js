@@ -8,6 +8,7 @@ const config = require('config')
 const morgan = require('morgan')
 const _ = require('lodash')
 
+
 const logger = require('./common/logger')
 const routes = require('./routes')
 const MessageBusService = require('./services/MessageBusService')
@@ -46,6 +47,7 @@ app.use((err, req, res, next) => {
   res.send({message})
   logger.error(err)
 })
+
 module.exports = app;
 
 

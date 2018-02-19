@@ -4,10 +4,23 @@ service: serverless-app1 # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: dev2
   memorySize: 128
   timeout: 10
-  stage: development
+  #custom: ${file(./config/${self:provider.stage}.json)}
+  custom: ${file(./config/dev2.json)}
   region: us-east-1
+  environment:
+    ALLOWED_SERVICES: ${self:provider.custom.ALLOWED_SERVICES}
+    #ALLOWED_SERVICES: ${file(./config/${self:provider.stage}.json):ALLOWED_SERVICES}
+    CONTEXT_PATH: ${file(./config/${self:provider.stage}.json):CONTEXT_PATH}
+    JWT_TOKEN_SECRET: ${file(./config/${self:provider.stage}.json):JWT_TOKEN_SECRET}
+    JWT_TOKEN_EXPIRES_IN: ${file(./config/${self:provider.stage}.json):JWT_TOKEN_EXPIRES_IN}
+    KAFKA_TOPIC_PREFIX: ${file(./config/${self:provider.stage}.json):KAFKA_TOPIC_PREFIX}
+    KAFKA_URL: ${file(./config/${self:provider.stage}.json):KAFKA_URL}
+    KAFKA_CLIENT_CERT: ${file(./config/${self:provider.stage}.json):KAFKA_CLIENT_CERT}
+    KAFKA_CLIENT_CERT_KEY: ${file(./config/${self:provider.stage}.json):KAFKA_CLIENT_CERT_KEY}
+    
 
 functions:
  api:
