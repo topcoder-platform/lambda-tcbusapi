@@ -38,7 +38,7 @@ jobs:
              
 notify:
   webhooks:
-    - url: $(eval "echo \$$slackwebhook")
+    - url: $(eval "echo \$slackwebhook")
 experimental:
   notify:
     branches:
