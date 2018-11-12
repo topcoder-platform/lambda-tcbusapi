@@ -36,7 +36,7 @@ jobs:
              
 notify:
   webhooks:
-    - url: https://hooks.slack.com/services/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
+    - url: $webhook
 experimental:
   notify:
     branches:
