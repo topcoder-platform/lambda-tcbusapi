@@ -25,7 +25,6 @@ jobs:
              git config --global init.templateDir ~/.git-templates/git-secrets 
              git secrets --register-aws --global 
              cd ..
-             echo $webhook
                  
       - run:
           name: Scanning
@@ -38,7 +37,7 @@ jobs:
              
 notify:
   webhooks:
-    - url: $(eval "echo \$webhook")
+    - url: $webhook
 experimental:
   notify:
     branches:
