@@ -32,8 +32,7 @@ jobs:
              #echo "AWS_ACCOUNT_ID=811456781234" > /root/project/t1.txt
              #git secrets --scan -r $CIRCLE_WORKING_DIRECTORY
              git secrets --scan -r 
-             
-             
+                       
              
 notify:
   webhooks:
@@ -42,7 +41,6 @@ experimental:
   notify:
     branches:
       only:
-        - master
         - dev-circleci
         
 workflows:
@@ -52,4 +50,4 @@ workflows:
       - "buildp":
           filters:
             branches:
-              only: dev-circleci
+              only: [dev-circleci]
