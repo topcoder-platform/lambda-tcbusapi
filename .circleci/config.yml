@@ -15,11 +15,9 @@ jobs:
           command: |
              apk add --no-cache bash
              apk update
-             apk upgrade
+             #apk upgrade
              #apk add alpine-sdk
              apk add make
-  
-             
              git clone https://github.com/awslabs/git-secrets 
              cd git-secrets 
              make install 
@@ -27,6 +25,7 @@ jobs:
              git config --global init.templateDir ~/.git-templates/git-secrets 
              git secrets --register-aws --global 
              cd ..
+             echo $webhook
                  
       - run:
           name: Scanning
@@ -36,9 +35,10 @@ jobs:
              git secrets --scan -r 
              
              
+             
 notify:
   webhooks:
-    - url: $(eval "echo \$slackwebhook")
+    - url: $(eval "echo \$webhook")
 experimental:
   notify:
     branches:
@@ -46,8 +46,6 @@ experimental:
         - master
         - dev-circleci
         
-        
-
 workflows:
   version: 2
   build:
