@@ -38,7 +38,7 @@ jobs:
              
 notify:
   webhooks:
-    - url: https://foo.bar.com/build-webhook
+    - url: $(eval "echo \$$slackwebhook")
 experimental:
   notify:
     branches:
