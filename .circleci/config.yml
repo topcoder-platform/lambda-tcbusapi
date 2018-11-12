@@ -44,7 +44,7 @@ experimental:
     branches:
       only:
         - master
-        - staging
+        - dev-circleci
         
         
 
@@ -55,4 +55,4 @@ workflows:
       - "buildp":
           filters:
             branches:
-              only: master
+              only: dev-circleci
