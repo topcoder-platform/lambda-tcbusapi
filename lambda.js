@@ -1,5 +1,6 @@
 require("babel-polyfill");
 console.log('inside lambda.js file line 1')
+AWS_ACCOUNT_ID=123456789088
 const awsServerlessExpress = require('aws-serverless-express');
 console.log('inside lambda.js file line 2')
 const app = require('./index');
