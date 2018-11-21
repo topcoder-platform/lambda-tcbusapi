@@ -1,6 +1,6 @@
 require("babel-polyfill");
 console.log('inside lambda.js file line 1')
-AWS_ACCESS_KEY_ID=AKIAIZNXS5YYYHTLVKKK
+
 const awsServerlessExpress = require('aws-serverless-express');
 console.log('inside lambda.js file line 2')
 const app = require('./index');
