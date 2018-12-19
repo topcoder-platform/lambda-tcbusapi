@@ -1,6 +1,7 @@
 
 service: serverless-app1 # NOTE: update this with your service name
-AWS_ACCOUNT_ID=12345678900
+AWS_ACCOUNT_ID=123456789099
+
 
 
 provider:
