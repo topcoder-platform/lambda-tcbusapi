@@ -1,6 +1,6 @@
 
 service: serverless-app1 # NOTE: update this with your service name
-AWS_ACCOUNT_ID=123456789099
+AWS_ACCOUNT_ID=123456789000
 provider:
   name: aws
   runtime: nodejs6.10
